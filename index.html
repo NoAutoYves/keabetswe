@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('index.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #000;
+      transition: opacity 0.8s ease-in-out;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 6vw;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 2;
+      max-width: 70%;
+      margin-top: 80vw;
+    }
+    h1 {
+      font-size: 6vw;
+      margin-bottom: 5vw;
+    }
+    p {
+      font-size: 4.5vw;
+      margin-bottom: 6vw;
+    }
+  .btn {
+    display: block;
+    width: 70%;              /* narrower than full width */
+    padding: 2.5vw;          /* smaller padding */
+    margin: 2vw auto;
+    font-size: 4vw;          /* smaller text */
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15); /* translucent red */
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background: rgba(252, 145, 58, 0.7); /* translucent orange on hover */
+    transform: scale(1.05);
+  }
+
+/* Floating hearts */
+    .heart {
+      position: absolute;
+      bottom: -15vh; /* start below screen */
+      font-size: 8vw; /* nice and visible */
+      animation: floatUp 6s linear infinite; /* faster */
+      opacity: 0;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-130vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>😍LEDONGA LAKA😍</h1>
+    <p> Chipi yao betha di chipi tse tsohle mo lefatsheng.. Lepyatla!!! Ge ke bona wena ke bona di naledi fela, One look into your eyes ke timela bophelo baka kaofela… Kao rata sahn! Would you please be my Valentine?”</p>
+    <a href="yes.html" class="btn" onclick="event.preventDefault(); fadeOut('yes.html')">Say Yes 💕</a>
+    <a href="no.html" class="btn" onclick="event.preventDefault(); fadeOut('no.html')">No 😢</a>
+  </div>
+
+  <!-- Lots of floating hearts -->
+  <div class="heart" style="left:5%; animation-delay:0s;">❤️</div>
+  <div class="heart" style="left:12%; animation-delay:1s;">💖</div>
+  <div class="heart" style="left:20%; animation-delay:2s;">💕</div>
+  <div class="heart" style="left:28%; animation-delay:3s;">💘</div>
+  <div class="heart" style="left:36%; animation-delay:4s;">💓</div>
+  <div class="heart" style="left:44%; animation-delay:5s;">💞</div>
+  <div class="heart" style="left:52%; animation-delay:6s;">❤️</div>
+  <div class="heart" style="left:60%; animation-delay:7s;">💖</div>
+  <div class="heart" style="left:68%; animation-delay:8s;">💕</div>
+  <div class="heart" style="left:76%; animation-delay:9s;">💘</div>
+  <div class="heart" style="left:84%; animation-delay:10s;">💓</div>
+  <div class="heart" style="left:92%; animation-delay:11s;">💞</div>
+
+  <script>
+    // create lots of hearts dynamically
+    const emojis = ["❤️","💖","💕","💘","💓","💞"];
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      // random horizontal position
+      heart.style.left = Math.random() * 100 + "%";
+      // random animation delay so they don't all rise together
+      heart.style.animationDelay = (Math.random() * 6) + "s";
+      // optional: random size
+      heart.style.fontSize = (6 + Math.random() * 6) + "vw";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+  </script>
+
+  <script>
+    function fadeOut(url) {
+      document.body.classList.remove("fade-in");
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = url;
+      }, 800); // matches transition duration
+    }
+  </script>
+</body>
+</html>

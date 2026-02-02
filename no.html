@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nooo 💔</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Impact, Arial, sans-serif;
+      color: white;
+      transition: opacity 0.8s ease-in-out;
+      background: url('no.jpeg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .meme-text {
+      font-size: 12vw; /* large text that scales with screen */
+      text-transform: uppercase;
+      text-shadow: -3px -3px 0 #000, 3px -3px 0 #000,
+                   -3px  3px 0 #000, 3px  3px 0 #000;
+      line-height: 1.5; /* more breathing space */
+      width: 100%;
+      padding: 0 5vw;
+      margin-bottom: 8vw;
+    }
+    .btn {
+      display: inline-block;
+      padding: 3vw 6vw;
+      font-size: 6vw;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 70vw;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: rgba(252, 145, 58, 0.8); /* translucent orange */
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="btn" onclick="event.preventDefault(); fadeOut('index.html')">⬅ Go Back</a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  function fadeOut(url) {
+    document.body.classList.remove("fade-in");
+    document.body.style.opacity = 0;
+    setTimeout(() => {
+      window.location.href = url;
+    }, 800); // matches transition duration
+  }
+</script>
+
+</body>
+</html>

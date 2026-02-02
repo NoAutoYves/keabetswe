@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yay! ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('yes.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      transition: opacity 0.8s ease-in-out; /* smooth fade */
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 6vw;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width:70%;
+      text-align: center;
+      margin-bottom: 8vw;
+      margin-top: 50vw;
+    }
+    h1 {
+      font-size: 7vw;
+      margin-bottom: 5vw;
+    }
+    p {
+      font-size: 5vw;
+      margin-top: 2vw;
+    }
+    .btn {
+      display: inline-block;
+      padding: 3vw 6vw;
+      font-size: 6vw;
+      background: rgba(255, 255, 255, 0.15); /* translucent */
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: rgba(252, 145, 58, 0.8);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>😍MFANAKAAAA😍</h1>
+    <p>I can’t wait to spend Valentine’s Day with you 💕</p>
+  </div>
+
+  <!-- Back button with fade-out -->
+  <a href="index.html" class="btn" onclick="event.preventDefault(); fadeOut('index.html')">⬅ Go Back</a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+
+    function fadeOut(url) {
+      document.body.classList.remove("fade-in");
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = url;
+      }, 800); // matches transition duration
+    }
+  </script>
+</body>
+</html>
